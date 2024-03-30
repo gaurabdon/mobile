@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)), url(images/background.png);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terms-box {
+    max-width: 90%; /* Adjust to your preference */
+    background-color: #fff; 
+    color: #000; 
+    font-family: "Montserrat";
+    padding: 60px 30px;
+}
+
+.terms-text {
+    padding: 0 20px;
+    max-height: 400px; /* Adjust to your preference */
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 500;
+    color: #282828; 
+}
+
+.terms-text::-webkit-scrollbar {
+    width: 2px;
+    background-color: #282828;
+}
+
+.terms-text::-webkit-scrollbar-thumb {
+    background-color: #08dbdee7;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.terms-box h4 span {
+    color: #08dbdee7;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 30px; /* Adjust to your preference */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 15px; /* Adjust to your preference */
+}
+
+nav ul li a {
+    color: #08dbdee7;
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    padding: 0 10px; /* Adjust to your preference */
+    justify-content: space-between;
+}
+
+.btn {
+    height: 50px;
+    width: calc(50% - 10px); /* Adjust to your preference */
+    margin-bottom: 10px; /* Adjust to your preference */
+    border: 0;
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #fff;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+.red-btn {
+    background-color: #08dbdee7;
+}
+
+.gray-btn {
+    background-color: #282828;
+}
+
+.btn:hover {
+    opacity: .6;
+}
+
+a.no-underline {
+    text-decoration: none; 
+}
+
+.no-underline {
+    color:#08dbdee7 ; 
+    text-decoration: none; 
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .terms-box {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .terms-text {
+        max-height: none;
+        height: auto;
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    .btn {
+        width: 100%; /* Full width for buttons on smaller screens */
+        margin-bottom: 15px; /* Increase margin between buttons on smaller screens */
+    }
+}

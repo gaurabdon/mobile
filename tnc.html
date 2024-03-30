@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="hi2.css">
+</head>
+<body>
+
+<div class="terms-box" id="termsBox">
+    <div class="terms-text">
+        <h2>Terms and Conditions</h2>
+        <p>Last Edit: 27/3/2024</p>
+        <p>Greetings Users,</p>
+      
+        <p>Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.</p>
+        <p>The use of this website is subject to the following terms of use:</p>
+        <ol>
+            <li>The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
+            <li>This website uses cookies to monitor browsing preferences. If you do allow cookies to be used, the following personal information may be stored by us for use by third parties.</li>
+            <li>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness, or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+        </ol>
+    </div>
+
+    <h4>I Agree to the <span>Terms and Conditions</span> and I read the Privacy Notice.</h4>
+
+    <div class="buttons">
+        <button class="btn red-btn" id="acceptBtn">Accept</button>
+        <button class="btn gray-btn" id="declineBtn">Decline</button>
+    </div>
+</div>
+
+<script>
+    const acceptBtn = document.getElementById('acceptBtn');
+    const declineBtn = document.getElementById('declineBtn');
+    const termsBox = document.getElementById('termsBox');
+
+    acceptBtn.addEventListener('click', redirectToHomePage);
+    declineBtn.addEventListener('click', handleDecline);
+
+    function redirectToHomePage() {
+        localStorage.setItem('termsAccepted', 'true');
+        window.location.href = 'index.html';
+    }
+
+    function handleDecline() {
+        alert('You must accept the terms to proceed.');
+    }
+
+    window.onload = function() {
+        if (localStorage.getItem('termsAccepted') !== 'true') {
+            termsBox.style.display = 'block';
+        } else {
+            window.location.href = 'index.html';
+        }
+    };
+</script>
+
+</body>
+</html>
